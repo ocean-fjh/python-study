@@ -30,3 +30,31 @@ bytes类型数据	带b前缀的单引号或双引号
 生成整数序列	range(n)	[0,1,2,...,n-1]
 
 
+函数
+
+定义函数时，需要确定函数名和参数个数
+如果有必要，可以先对参数的数据类型做检查    isinstance(x,int)
+函数执行完毕也没有return语句时，自动return None
+函数可以同时返回多个值，但其实就是一个tuple
+函数的参数：
+	位置参数	enroll(name,gender)
+	默认参数	enroll(name,gender,city='Nanjing')
+	可变参数	calc(*numbers)
+			 1) 0~n个参数
+			 2) 组装成tuple
+			 3) nums=[1,2,3] -> calc(*nums)
+	关键字参数	enroll(name,gender,**kw)
+			 1) 0~n个含参数名的参数
+			 2) 组装成dict
+			 3) enroll(name,gender,city='Nanjing')
+			 4) extra={'job':'Engineer'} -> enroll(name,gender,**extra)
+	命名关键字参数	enroll(name,gender,*,city='Nanjing',job)
+			 1) 如已定义了可变参数，则不需要特殊分隔符*了
+			 2) 必须传入参数名
+对于任意函数，都可以通过类似func(*args, **kw)的形式调用它，无论它的参数是如何定义的
+
+
+
+
+
+

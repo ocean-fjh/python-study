@@ -26,6 +26,10 @@ bytes类型数据	带b前缀的单引号或双引号
 	set.remove(key)		删除元素key
 对字符串(str)的操作：
 	str.replace(s1,s2)	把s1替换成s2
+对字典(dict)的操作：
+	dict.keys()		所有键
+	dict.values()		所有值
+	dict.items()		所有键和值
 读取用户输入	str1=input(str2)	显示str2，返回str1
 生成整数序列	range(n)	[0,1,2,...,n-1]
 
@@ -54,7 +58,27 @@ bytes类型数据	带b前缀的单引号或双引号
 对于任意函数，都可以通过类似func(*args, **kw)的形式调用它，无论它的参数是如何定义的
 
 
+高级特性
 
+切片	order[::2]
+迭代	作用于for循环
+	可迭代对象判断：  isinstance(x,Iterable)
+列表生成式	[x*x for x in range(1,11) if x%2==0]
+		[m+n for m in 'ABC' for n in 'XYZ']
+		[k+'='+v for k,v in d.items()]
+生成器		a)定义
+		  1) g=(x*x for x in range(10))
+		  2) 在函数中yield
+		b)调用
+		  1) next(g)
+		  2) for n in g:
+		c)generator的return语句返回值在StopIteration的value中：
+		  except StopIteration as e:
+			print(e.value)
+			break
+迭代器		迭代器判断：  isinstance(x,Iterator)
+		迭代器表示一个惰性计算的序列
+		序列可通过iter()函数获得一个Iterator对象
 
 
 

@@ -1,0 +1,32 @@
+﻿python基础
+
+表示''内部的字符串默认不转义	r''
+表示多行内容	'''...'''
+空值	None
+常量的习惯表示	全部大写的变量名
+bytes类型数据	带b前缀的单引号或双引号
+文件开头：
+	#!/usr/bin/env python3	告诉Linux/OS X系统，这是个python可执行程序，Windows系统会忽略
+	#-*- coding: utf-8 -*-	告诉python解释器，按照UTF-8编码读取源代码
+格式化字符串：
+	1、'%d %f %s %%' % (int,float,str)
+	注：%s永远起作用
+	2、'{0},{1:.1f}'.format(str,float)
+对序列(order)的操作：
+	len(order)		返回元素个数
+	order[n]		返回第n+1个元素(索引)
+	order[-n]		返回倒数第n个元素
+对列表(list)的操作：
+	list.append(...)	追加元素到末尾
+	list.insert(n,...)	在索引号为n的位置插入
+	list.pop(n)		删除索引号为n的元素
+	list.sort()		对列表进行排序
+对集合(set)的操作：
+	set.add(key)		添加元素key
+	set.remove(key)		删除元素key
+对字符串(str)的操作：
+	str.replace(s1,s2)	把s1替换成s2
+读取用户输入	str1=input(str2)	显示str2，返回str1
+生成整数序列	range(n)	[0,1,2,...,n-1]
+
+

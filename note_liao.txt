@@ -153,6 +153,47 @@ setattr(obj,'x',n)	obj对象的x属性设置为n
 getattr(obj,'x',404)	获取obj对象的x属性，如不存在则返回默认值404
 以上三个函数也可以作用于对象的方法
 
+====================
+面向对象高级编程
+
+from types import MethodType
+s.set_age = MethodType(set_age, s)	给实例s绑定一个set_age方法
+__slots__=('...','...')		限制该class实例能添加的属性，对继承的子类不起作用
+    
+    @property				把getter方法变成属性
+    def birth(self):
+        return self._birth
+
+    @birth.setter			property本身创建了另一个装饰器birth.setter
+    def birth(self, value):		把setter方法变成属性赋值
+        self._birth = value
+
+    @property				只读属性，没定义getter方法
+    def age(self):
+        return 2015 - self._birth
+在设计类的继承关系时，通常，主线都是单一继承下来的
+创建MixIn类，通过多重继承来组合多个MixIn的功能
+__str__()	设计打印实例时打印的内容，返回用户看到的字符串
+__repr__()	直接显示变量时调用，返回程序开发者看到的字符串
+__iter__()	返回一个迭代对象(可是自己)，然后，Python的for循环就会不断调用该迭代对象的__next__()方法拿到循环的下一个值
+__getattr__()	没有找到属性的情况下，才调用来查找，设计返回值
+__call__()	设计如何对实例进行调用
+callable(...)	判断对象能否被调用
+枚举类		Enum(...,(...,...))
+		class ...(Enum): ...=...
+		类名.成员名称.value  枚举常量
+class的类型是type
+要创建一个class对象，type()函数依次传入3个参数：
+1、class的名称；
+2、继承的父类集合
+3、class的方法名称与函数绑定 dict(...=...)
+
+
+
+
+
+
+
 
 
 

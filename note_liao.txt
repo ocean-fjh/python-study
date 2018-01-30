@@ -219,6 +219,44 @@ pdb.set_trace()	运行代码，程序会自动在pdb.set_trace()暂停并进入p
 		    ...
 单元测试通过了并不意味着程序就没有bug了，但是不通过程序肯定有bug
 
+====================
+IO编程
+
+同步IO vs 异步IO	是否等待IO执行的结果
+open(file_name,s)	打开一个文件对象，传入文件名和标识符
+'r','rb','w','wb','a'	标识符种类：读，读二进制，写，写二进制,追加
+open可传参数		encoding	编码
+			errors		非法编码字符的处理(常用ignore)
+read()			一次读取文件的全部内容
+read(size)		每次最多读取size个字节的内容
+readline()		每次读取一行内容
+readlines()		一次读取所有内容并按行返回list
+close()			关闭文件，避免占用操作系统的资源
+with open(...) as f:	不必调用f.close()方法，代码更佳简洁
+StringIO	\/	write()		写入str
+BytesIO		/\	getvalue()	获取写入后的str
+os
+  name			操作系统类型 posix-Linux,Unix,Mac OS X | nt-Windows
+  environ.get(...)	获取某个环境变量的值 		
+  path.abspath('.')	查看当前目录的绝对路径
+  path.split(...)	拆分路径，后一部分是最后级别目录或文件名
+  path.splittext(...)	拆分路径，后一部分是文件扩展名
+  path.isfile(...)	判断是否是文件
+  path.isdir(...)	判断是否是目录
+  listdir('.')		列出所有文件和目录
+  rename(x,y)		对文件重命名
+  remove(...)		删除文件
+序列化
+  pickle.dumps(d)	把任意对象序列化成一个bytes
+  pickle.dump(d,f)	直接把对象序列化后写入一个file-like Object
+  pickle.load(f)	从一个file-like Object中直接反序列化出对象 
+  json.dumps(d)		把Python对象变成一个JSON，返回一个str
+  json.dump(d,f)	直接把JSON写入一个file-like Object
+  json.loads(s)		把JSON的字符串反序列化
+  json.load(f)		从file-like Object中读取字符串并反序列化
+
+
+
 
 
 

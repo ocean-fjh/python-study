@@ -317,8 +317,20 @@ itertools
   itertools.groupby(list,fn)		把迭代器中相邻的重复元素挑出来放在一起
 					返回值两个：key,group
 					fn可选，作用于挑选规则
+urllib
+with request.urlopen(url) as f:		对url进行抓取，并返回响应
+    data=f.read()			读取响应内容
+    print(data.decode('utf-8'))		内容解码
 
-  
+模拟iPhone 6去请求网页
+req=request.Request('http://www.douban.com/')
+req.add_header('User-Agent', 'Mozilla/6.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/8.0 Mobile/10A5376e Safari/8536.25')
+with request.urlopen(req) as f:
+    ...
+
+contextlib
+XML
+HTMLParser
 
 
 

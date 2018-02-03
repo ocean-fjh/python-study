@@ -404,7 +404,16 @@ p.terminate()				结束进程
 	W_name.mainloop()			主消息循环
 	tkinter.messagebox.showinfo(str)	弹出消息对话框
 
+====================
+mysql数据库
 
+import mysql.connector						导入包
+conn=mysql.connector.connect(user=,password=,database=)		建立连接
+cursor=conn.cursor()						建立连接
+cursor.execute(sql)						执行sql语句，占位符是%s
+cursor.fetchall()						查询结果的返回
+conn.commit()							执行插入等操作后需提交事务
+cursor.close()							退出
 
 
 

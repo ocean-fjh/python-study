@@ -388,12 +388,21 @@ p.threads()				所有线程信息
 p.environ()				进程环境变量
 p.terminate()				结束进程
 
+====================
+图形界面
 
-
-
-
-
-
+模块：tkinter
+图形库：Tk
+使用注意：
+	类从Frame继承
+	Laabel(self,text=str)			Label组件
+	Button(self,text=str,command=fn)	Button组件
+	Entry(self)				输入框组件
+	widget.pack()				把widget加入到父容器并实现布局，是最简单的布局
+	self.quit()				退出程序
+	W_name.master.title(str)		窗口标题
+	W_name.mainloop()			主消息循环
+	tkinter.messagebox.showinfo(str)	弹出消息对话框
 
 
 

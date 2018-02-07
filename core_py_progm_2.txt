@@ -40,14 +40,29 @@ enumerate(iter)		返回enumerate对象，可迭代，生成由每个元素index�
 max(iter,key=fn)	fn函数作用后进行比较，返回最大值的原值
 reversed(seq)		返回一个以逆序访问的迭代器reversed
 sum(seq,init)		返回seq和可选参数init的总和
-zip(seq)		返回列表，元素为对应seq元素组成的元组
+zip(seq1,seq2)		返回列表，元素为对应seq1,seq2位置元素组成的元组
 
 string,ascii_uppercase	A~Z
 string.ascii_lowercase	a~z
 string.ascii_letters	a~zA~Z
 string.digits		0~9
 
-P175
+str.capitalize()			把字符串的首字母大写
+str.center(width)			原字符串居中，用空格填充至长度width
+str.ljust(width)			原字符串左对齐，用空格填充至长度width
+str.count(s,beg=0,end=len(str))		s在str中出现的次数
+str.endswith(s,beg=0,end=len(str))	字符串是否以s结尾
+str.find(s,beg=0,end=len(str))		字符串中s第一次出现的位置，不存在则返回-1
+str.encode(encoding='utf-8)		以指定格式编码
+str.decode(encoding='utf-8)		以指定格式解码
+str.join(seq)				以str为分隔符，连接seq中所有元素
+str.lstrip()				截掉str左边的空格
+str.lower()				所有字符转小写
+str.swapcase()				反转大小写
+str.partition(s)			切割，返回元组，三个元素，中间是s
+str.replace(s1,s2,num=...)		把str中s1替换成s2，次数不超过num
+str.split(s,num=...)			以s为分隔符分割str，无参为空格，分成num个字符子串
+str.splitlines(num=...)			按行分割str，分成num个字符子串
 
 
 

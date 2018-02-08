@@ -41,6 +41,7 @@ max(iter,key=fn)	fn函数作用后进行比较，返回最大值的原值
 reversed(seq)		返回一个以逆序访问的迭代器reversed
 sum(seq,init)		返回seq和可选参数init的总和
 zip(seq1,seq2)		返回列表，元素为对应seq1,seq2位置元素组成的元组
+sorted(seq)		顺序排序seq
 
 string,ascii_uppercase	A~Z
 string.ascii_lowercase	a~z
@@ -64,6 +65,12 @@ str.replace(s1,s2,num=...)		把str中s1替换成s2，次数不超过num
 str.split(s,num=...)			以s为分隔符分割str，无参为空格，分成num个字符子串
 str.splitlines(num=...)			按行分割str，分成num个字符子串
 
+list.append(obj)			向列表中添加对象obj
+list.extend(seq)			把序列seq的内容添加到列表中
+list.insert(index,obj)			在index的位置插入对象obj
+list.pop(index=-1)			删除并返回指定位置的对象，默认为最后一个对象
+list.remove(obj)			从列表中删除对象obj
+list.reverse()				原地翻转列表
 
 
 

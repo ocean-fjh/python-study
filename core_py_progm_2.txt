@@ -128,13 +128,16 @@ os.pathsep				分隔文件路径的字符串
 os.curdir				当前工作目录的字符串名称
 os.pardir				当前工作目录的父目录字符串名称
 
+os.getcwd()				返回当前工作目录
 os.chdir(path)				改变当前工作目录
 os.listdir(path)			列出指定目录的文件，默认为当前目录
 os.mkdir(str)				创建目录
 os.rmdir(str)				删除目录
+os.rename(s1,s2)			重命名文件，s1→s2
 
 os.path.basename(path)			去掉目录路径，返回文件名
 os.path.dirname(path)			去掉文件名，返回目录路径
+os.path.join(s1,s2,s3)			将分离的各部分组合成一个路径名（自动添加分隔符）
 os.path.split(path)			返回(dirname(),basename())元组	文件名前拆分
 os.path.splitdrive(path)		返回(drivename,pathname)元组	盘符后拆分
 os.path.splitext(path)			返回(filename,extension)元组	后缀名前拆分
@@ -147,7 +150,23 @@ os.path.isabs(path)			是否为绝对路径
 os.path.isdir(path)			路径是否存在且为一个目录
 os.path.isfile(path)			路径是否存在且为一个文件
 
-331
+关于永久性存储的模块：
+
+pickle		提供python对象的序列化或储存转换功能
+marshal
+
+anydbm		提供一个类似字典和文件的对象，可以完成字符串的永久性存储
+dbm
+gdbm
+dbhash
+dumbdbm
+
+shelve		提供了python对象的序列化和储存转换，以及类似字典和文件的对象，可以完成python对象的永久性存储
+
+
+345
+
+
 
 
 

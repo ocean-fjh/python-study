@@ -163,8 +163,34 @@ dumbdbm
 
 shelve		提供了python对象的序列化和储存转换，以及类似字典和文件的对象，可以完成python对象的永久性存储
 
+异常处理
+try:					可能出现异常的代码块
+except (Exception1,Exception2),e:	出现异常时运行
+else:					无异常时运行
+finally:				无论如何都运行
 
-345
+with context_expr [as var]:		作用于支持上下文管理协议的对象
+    with_suite
+
+BaseException				所有异常的基类
+SystemExit				python解释器请求退出
+KeyboardInterrupt			用户终端执行
+Exception				常规错误的基类
+
+sys.exc_info()				返回异常的三元组信息，分别是：异常类，实例，追踪对象
+
+388
+
+
+
+
+
+
+
+
+
+
+
 
 
 

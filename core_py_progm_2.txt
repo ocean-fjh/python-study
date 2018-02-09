@@ -105,7 +105,50 @@ X if C else Y				三元表达式 C?X:Y
 range(start,end,step=1)			生成从start(默认0)到end-1，步幅为step的可迭代对象
 xrange(start,end,step=1)		与range类似，返回可迭代对象（不是序列也不是迭代器）
 
-317
+open(str,s)				以s方式打开str文件
+file(str,s)				以s方式打开str文件
+f.read(size=-1)				从文件f中读取size个字节，返回字符串
+f.readline(size=-1)			从文件f中读取下一行的size个字节，返回字符串
+f.readlines()				从文件f中读取剩余所有行，返回字符串列表
+f.write(str)				把字符串写入文件，返回字节数，不自动换行符
+f.writelines(str|list)			把字符串列表写入文件，无返回值，不自动换行符
+f.truncate(size=f.tell())		文件截取至size字节处并保存，默认为当前位置
+f.seek(off,whence=0)			移动文件指针，从whence处(0:开始,1:当前,2:末尾)偏移off字节
+f.tell()				返回当前文件指针的位置（第几个字节）
+
+f.closed				文件是否已关闭
+f.encoding				文件使用的编码
+f.mode					文件打开时的访问模式
+f.name					文件名
+f.newlines				行分隔符(未读取到时为None，1种为字符串，多种为列表)
+
+os.linesep				在文件中分隔行的字符串
+os.sep					分隔文件路径名的字符串
+os.pathsep				分隔文件路径的字符串
+os.curdir				当前工作目录的字符串名称
+os.pardir				当前工作目录的父目录字符串名称
+
+os.chdir(path)				改变当前工作目录
+os.listdir(path)			列出指定目录的文件，默认为当前目录
+os.mkdir(str)				创建目录
+os.rmdir(str)				删除目录
+
+os.path.basename(path)			去掉目录路径，返回文件名
+os.path.dirname(path)			去掉文件名，返回目录路径
+os.path.split(path)			返回(dirname(),basename())元组	文件名前拆分
+os.path.splitdrive(path)		返回(drivename,pathname)元组	盘符后拆分
+os.path.splitext(path)			返回(filename,extension)元组	后缀名前拆分
+os.path.getatime(path)			返回最近访问时间
+os.path.getctime(path)			返回文件创建时间
+os.path.getmtime(path)			返回最近文件修改时间
+os.path.getsize(path)			返回文件大小（字节）
+os.path.exists(path)			路径是否存在
+os.path.isabs(path)			是否为绝对路径
+os.path.isdir(path)			路径是否存在且为一个目录
+os.path.isfile(path)			路径是否存在且为一个文件
+
+331
+
 
 
 

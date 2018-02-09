@@ -101,7 +101,11 @@ s.issuperset(t)				s是t的超集则返回True
 s.discard(obj)				若obj在s中，则删除obj
 s.pop()					删除并返回s中任意一个对象
 
-285
+X if C else Y				三元表达式 C?X:Y
+range(start,end,step=1)			生成从start(默认0)到end-1，步幅为step的可迭代对象
+xrange(start,end,step=1)		与range类似，返回可迭代对象（不是序列也不是迭代器）
+
+317
 
 
 

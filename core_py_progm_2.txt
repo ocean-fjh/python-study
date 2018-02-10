@@ -179,16 +179,31 @@ Exception				常规错误的基类
 
 sys.exc_info()				返回异常的三元组信息，分别是：异常类，实例，追踪对象
 
-388
+装饰器：
 
+@g				def func(...):
+@f(args)	    等价 	    pass
+def func(...):			    fenc=g(f(args)(func))
+    pass
 
+filter(bool_func,seq)			可被列表解析的if替代
+map(func,seq)				可被列表解析的函数替代
+reduce(func,seq[,init])			func有两个参数，需from _functools import reduce
 
+from fuctools import partial
+partial(func,*args,**kw)		返回固定某参数的偏函数，(位置参数n：f(x)=f(n,x))
 
+局部名字空间是首先被搜索的，存在于其局部作用域
 
+global var	代码块中声明var为全局变量，运行代码块时创建或覆盖
 
+生成器：
 
+y.next()
+y.send(...)		函数中(yield ...)返回send的值
+y.close()
 
-
+450
 
 
 

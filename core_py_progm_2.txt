@@ -221,7 +221,57 @@ reload()		重新导入一个已经导入的模块，要求模块是全部且成�
 
 一个模块只被加载一次, 无论它被导入多少次
 
-472
+类名 	大写字母打头
+数据	名词
+方法	谓词
+
+混合记法(mixedCase)，骆驼记法(camelCase)	updateEmali or update_email
+
+没有实例，类的方法是不能被调用的，但数据可以
+文档字符串不能被派生类继承
+
+特殊类属性：
+C.__name__			类C的名字（字符串）
+C.__doc__			类C的文档字符串
+C.__bases__			类C的所有父类构成的元组
+C.__dict__			类C的属性和数据值构成的字典
+C.__module__			类C定义所在的模块
+C.__class__			实例C对应的类
+
+类中静态方法
+def foo():		
+    pass
+foo=staticmethod(foo)		实例也可调用
+
+def foo(cls):			cls指向该类
+    pass
+foo=classmothod(foo)		实例也可调用
+
+或加装饰器
+@staticmethod
+@classmethod
+
+class B(A)......
+super(B,self).__init__()    等价    A.__init__(self)
+
+A.foo(b)			用实例b调用子类A的方法
+C.__mro__			对父类搜索顺序的元组
+C.__init__()			生成实例时调用
+C.__del__()			删除实例时调用
+
+issubclass(sub,sup)		类sub是否是类sup的子类，sup可以是元组
+isinstance(c1,c2)		c1是否是c2或其一个子类的实例,c2可以是元组
+
+hasattr(obj,str)		一个对象是否有一个特定的属性
+getattr(obj,str,default)	在你试图读取一个不存在的属性时，引发AttributeError异常，除非给出那个可选的默认参数。
+setattr(obj,str)		要么加入一个新的属性，要么取代一个已存在的属性
+delattr(obj,str)		从一个对象中删除属性
+
+__slots__			任何试图创建一个其名不在__slots__中的名字的实例属性都将导致AttributeError异常
+带__slots__属性的类定义不会存在__dict__了
+
+568
+
 
 
 

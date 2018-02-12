@@ -270,7 +270,60 @@ delattr(obj,str)		从一个对象中删除属性
 __slots__			任何试图创建一个其名不在__slots__中的名字的实例属性都将导致AttributeError异常
 带__slots__属性的类定义不会存在__dict__了
 
-568
+operator模块
+add,sub,mul,div			加减乘除
+
+类中定义 __call__(self) 函数，使实例可以被调用，调用参数传至__call__中
+
+os.system(str)			接收字符串形式的系统命令并执行它，返回0表示成功
+os.popen(str)			与system类似，但返回一个类文件对象
+
+sys.exit(status=0)		立即退出程序，返回status的值
+
+正则表达式
+
+|		或
+.		匹配任何字符（换行符除外）
+^ or \A		匹配字符串开始
+$ or \Z		匹配字符串结尾
+*		匹配前面出现的正则表达式 零次或多次
++		匹配前面出现的正则表达式 一次或多次
+?		匹配前面出现的正则表达式 零次或一次
+{n}		匹配前面出现的正则表达式 n次
+{m,n}		匹配前面出现的正则表达式 m次~n次
+[...]		匹配字符组里出现的任意一个字符
+[x-y]		匹配从字符x到y中的任意一个字符
+[^...]		不匹配此字符集中的任何一个字符
+(*+?{})?	括号中四种的非贪婪版本
+\d		匹配任何数字  \D是其反义
+\w		匹配任何数字字母字符  \W是其反义
+\s		匹配任何空白字符[\n\t\r\v\f]  \S是其反义
+\b		匹配单词边界  \B是其反义
+(...)		子组
+
+re模块函数
+compile(pattern,flags=0)	返回pattern对应的regex对象，大多数re模块函数都可以作为regex对象的方法
+match(pattern,string,flags=0)	在字符串string起始处查找正则表达式模式pattern的第一次出现，返回匹配对象
+search(pattern,string,flags=0)	在字符串string中查找正则表达式模式pattern的第一次出现，返回匹配对象
+findall(pattern,string[,flags])	在字符串string中查找正则表达式模式pattern的所有出现，返回列表
+split(pattern,string,max=0)	根据pattern分割string，可根据正则表达式
+sub(pattern,repl,string,max=0)	把string中的pattern替换成repl
+subn(...)			同sub，但它还返回一个表示替换次数的数字，最终返回一个元组
+
+匹配对象.group(n=0)		返回匹配的结果，返回第n个子组
+匹配对象.groups()		返回包含表达式子组的元组，没有子组则为空元组
+
+655
+
+
+
+
+
+
+
+
+
+
 
 
 

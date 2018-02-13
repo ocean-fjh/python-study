@@ -1,0 +1,29 @@
+﻿MySQL数据库--pymysql模块
+
+db=pymysql.connect('localhost',username,password,database)	打开数据库连接
+cs=db.cursor()			创建游标对象
+cs.execute(sql)			执行sql操作
+cs.rowcount			返回执行execute方法后影响的行数
+data=cs.fetchone()		获取单条数据(查询)
+data=cs.fetchall()		获取全部数据(查询)
+db.commit()			提交到数据库执行(更新，插入，删除)
+db.roolback()			如发生错误则回滚(更新，插入，删除)
+db.close()			关闭数据库连接
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

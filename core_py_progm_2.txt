@@ -313,13 +313,50 @@ subn(...)			同sub，但它还返回一个表示替换次数的数字，最终�
 匹配对象.group(n=0)		返回匹配的结果，返回第n个子组
 匹配对象.groups()		返回包含表达式子组的元组，没有子组则为空元组
 
-655
+GUI : tkinter
+top=tkinter.Tk()		顶层窗口
 
+Label		标签。用来显示文字或图片
+Message		消息框。类似于标签，但可以显示多行文本
+Button		按钮。类似标签，但提供额外的功能，例如鼠标掠过、按下、释放以及键盘操作/事件
+Checkbutton	选择按钮。一组方框，可以选择其中的任意个（类似HTML 中的checkbox）
+Radiobutton	单选按钮。一组按钮，其中只有一个可被“按下”（类似HTML 中的radio）
+Menubutton	菜单按钮。用来包含菜单的组件（有下拉式、层叠式等等）
+Menu		菜单。点下菜单按钮后弹出的一个选项列表，用户可以从中选择
+Entry		文本框。单行文字域，用来收集键盘输入（类似HTML 中的text）
+Text		文本域。多行文字区域，可用来收集（或显示）用户输入的文字（类似HTML 中的textarea）
+Listbox		列表框。一个选项列表，用户可以从中选择
+Scale		进度条。线性“滑块”组件，可设定起始值和结束值，会显示当前位置的精确值
+Scrollbar	滚动条。对其支持的组件（文本域、画布、列表框、文本框）提供滚动功能
+Frame		框架。包含其他组件的纯容器
+Toplevel	顶级。类似框架，但提供一个独立的窗口容器。
+Canvas		画布。提供绘图功能（直线、椭圆、多边形、矩形）；可以包含图形或位图
 
+url格式：
+prot_sch://net_loc/path;params?query#frag
 
+prot_sch	网络协议或者下载规划
+net_loc		服务器位置(或许也有用户信息)
+path		斜杠( / )限定文件或者CGI 应用程序的路径。
+params		可选参数
+query		连接符( & )连接键值对
+frag		拆分文档中的特殊锚
 
+from urllib import parse
 
+parse.urlparse(urlstr)		将urlstr解析成一个6-元组(prot_sch,net_loc,path,params,query,frag)
+parse.urlunparse(urltup)	拼合一个6-元组
+parse.urljoin(baseurl,newurl)	将baseurl的基路径与newurl连接起来
+parse.urlencode(dict)		将字典转换为url中以&划分的字符串
 
+from urllib import request
+
+request.urlopen(url,pqd=None)		打开一个给定URL字符串与Web 连接，并返回文件类的对象，pqd为POST请求的内容
+    urlopen()对象方法
+        f.geturl()	返回f所打开的真正的url
+	f.info()	返回f的MIME头文件
+	f.fileno()	返回f的文件句柄
+request.urlretrieve(url,localfile)	将url内容下载到localfile中，返回一个2-元组(filename, mime_hdrs)，文件名和HTTPMessage对象文件头
 
 
 

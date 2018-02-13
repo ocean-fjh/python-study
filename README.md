@@ -1,1 +1,1 @@
-# python-study
+all kinds of notes of my python3 study

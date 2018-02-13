@@ -277,43 +277,38 @@ re.match(r'正则表达式',test)	匹配成功，返回一个Match对象，否�
 常用内置模块
 
 datetime
+  datetime(...)				创建指定日期时间的datetime
   datetime
-      datetime.now()			返回当前日期和时间，类型是datetime
-      datetime(...)			创建指定日期时间的datetime
+      now()				返回当前日期和时间，类型是datetime
       dt.timestamp()			把datetime转换为timestamp
-      datetime.fromtimestamp(...)	把timestamp转换为datetime（前加utc - 直接转换到UTC标准时区的时间）
-      datetime.strptime(s,fs)		把str转换为datetime，无时区信息
+      fromtimestamp(...)		把timestamp转换为datetime（前加utc - 直接转换到UTC标准时区的时间）
+      strptime(s,fs)			把str转换为datetime，无时区信息
 					需要日期时间格式化字符串 %Y-年 %m-月 %d-日 %H-时 %M-分 %S-秒
       dt.strftime			把datetime转换为str
   timedelta
       timedelta(...)			格式化日期时间，使其能直接+-于datetime
 					参数:days,hours,minutes,weeks,seconds
 collections
-  namedtuple
-      namedtuple(s,[list])		创建自定义tuple对象，名为s，元素名列在list里
-  deque
-      deque(Iterable)			高效实现插入和删除操作的双向列表，适合用于队列和栈
+    namedtuple(s,[list])		创建自定义tuple对象，名为s，元素名列在list里
+    deque(Iterable)			高效实现插入和删除操作的双向列表，适合用于队列和栈
 					append(),pop(),appendleft(),popleft()
-  defaultdict
-      defaultdict(lambda :'N/A')	此dick引用的key不存在时，调用函数返回默认值
-  OrderedDict
-      OrderedDict(...)			此dick的key按照插入的顺序排列
-  Counter
-      Counter()				dict的子类，key是字符，value是数字
+    defaultdict(lambda :'N/A')		此dick引用的key不存在时，调用函数返回默认值
+    OrderedDict(...)			此dick的key按照插入的顺序排列
+    Counter()				dict的子类，key是字符，value是数字
 hashlib
-  hashlib.md5()/hashlib.sha1()		两种摘要算法生成对象
+  md5(s.encode(..))/sha1(s.encode(..))	两种摘要算法生成对象
   hl.update(s.encode('utf-8'))		文本编码后追加输入对象
   hl.hexdigest()			计算摘要
 hmac
-  hmac.new(key,msg,digestmod='MD5')	Hmac算法生成对象，针对所有哈希算法都通用
+  new(key,msg,digestmod='MD5')		Hmac算法生成对象，针对所有哈希算法都通用
   h.update(...)				追加内容
   h.hexdigest()				计算摘要
 itertools
-  itertools.count(n)			数值+1，无参为起始0
-  itertools.repeat(s,n)			重复，无第二参数为无限重复次数
-  itertools.takewhile(fn,l)		根据函数判断来截取出有限序列
-  itertools.chain(a,b)			把迭代对象串联起来
-  itertools.groupby(list,fn)		把迭代器中相邻的重复元素挑出来放在一起
+  count(n)				数值+1，无参为起始0
+  repeat(s,n)				重复，无第二参数为无限重复次数
+  takewhile(fn,l)			根据函数判断来截取出有限序列
+  chain(a,b)				把迭代对象串联起来
+  groupby(list,fn)			把迭代器中相邻的重复元素挑出来放在一起
 					返回值两个：key,group
 					fn可选，作用于挑选规则
 urllib
@@ -395,7 +390,7 @@ p.terminate()				结束进程
 图形库：Tk
 使用注意：
 	类从Frame继承
-	Laabel(self,text=str)			Label组件
+	Label(self,text=str)			Label组件
 	Button(self,text=str,command=fn)	Button组件
 	Entry(self)				输入框组件
 	widget.pack()				把widget加入到父容器并实现布局，是最简单的布局

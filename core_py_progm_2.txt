@@ -43,7 +43,7 @@ sum(seq,init)		返回seq和可选参数init的总和
 zip(seq1,seq2)		返回列表，元素为对应seq1,seq2位置元素组成的元组
 sorted(seq)		顺序排序seq
 
-string,ascii_uppercase	A~Z
+string.ascii_uppercase	A~Z
 string.ascii_lowercase	a~z
 string.ascii_letters	a~zA~Z
 string.digits		0~9
@@ -99,7 +99,7 @@ s.symmetric_difference(t)		返回集合，成员是s或t有，但不共有的
 s.issubset(t)				s是t的子集则返回True
 s.issuperset(t)				s是t的超集则返回True
 s.discard(obj)				若obj在s中，则删除obj
-s.pop()					删除并返回s中任意一个对象
+s.pop()					删除并返回s中第一个对象
 
 X if C else Y				三元表达式 C?X:Y
 range(start,end,step=1)			生成从start(默认0)到end-1，步幅为step的可迭代对象

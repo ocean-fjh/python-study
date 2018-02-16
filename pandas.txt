@@ -1,0 +1,80 @@
+﻿
+ ——————————————
+|  pandas模块  |
+ ——————————————
+
+------------------------------------------------------------------------
+一些备注：
+
+df[A] df.A df[0:3]			映射和.读取列 切片读取行
+df.loc[:,:]				读取多行多列（使用名字）
+df.iloc[:,:]				读取多行多列（使用位置）
+df.at[,]				读取某行某列的标量值（使用名字）
+df.iat[,]				读取某行某列的标量值（使用位置）
+df[df.A > 0]				布尔型索引
+df['e']=s				像字典一样可直接指定值为Series s，没有的index项设为NaN，多余的项舍去
+------------------------------------------------------------------------
+构造对象
+
+Series(data,index=index)		生成一维的Series，类型是统一的dtype，data可以是①字典、②数组、③标量，index是一维坐标轴的索引列表
+					Serues可以类似字典和数组一样进行操作
+date_range(str,periods=n)		构造时间序列DatetimeIndex，str为第一天的时间
+DataFrame(data,index,columns)		创建DataFrame结构，data为二维数组(行列)或字典(键为列名，值为一列所有值)或DataFrame
+------------------------------------------------------------------------
+Series 函数
+
+value_counts()				统计每一元素出现的次数
+s.str.lower()				当Series或者DataFrame的某一列是字符串时，我们可以用.str对这个字符串数组进行字符串的基本操作
+------------------------------------------------------------------------
+DataFrame 数据属性
+
+dtypes					每一列的列名和类型组成的Series
+index					查看下标
+columns					查看列标
+values					查看数据值，返回数组
+------------------------------------------------------------------------
+DataFrame 函数
+
+head(n=5)				查看最前面n行数据
+tail(n=5)				查看最后面n行数据
+describe()				查看简单的统计数据
+transpose() | T				转置
+sort_index(axis=0,ascending=T)		按下标小到大排序，axis=1指列标，ascending为F指倒序
+sort_values(by,ascending=T)		按照by列排序，ascending为F指倒序
+copy()					复制一份DataFrame
+isin(list)				返回对应元素是否存在list中的一个DataFrame
+reindex(index,columns)			返回对应新结构的DataFrame
+dropna(how='any')			丢弃所有缺失数据的行得到的新数据
+fillna(value=n)				填充缺失数据
+isnull()				检查缺失数据的位置
+mean(axis=0)				列均值，1为行均值
+sub(s)					返回元素减s的新DataFrame
+apply(f,axis=0)				将f作用于每一列，0为作用于行
+stack()					将columns变成一个新的index部分
+unstack()				将最后一级index放回column，也可以指定其他级别n
+------------------------------------------------------------------------
+pandas 函数
+
+concat([pd1,pd2])			将多个pandas对象进行连接
+append(s)				返回添加了行的新DataFrame
+df.groupby(by)				返回根据by分组的DataFrameGroupBy对象，可操作sum()等函数，by可以是序列
+MultiIndex.from_tuples(tuples,names=)	创建多index的index，tuples为 每一行index构成元组 组成的序列
+------------------------------------------------------------------------
+类别
+
+df[..].astype("category")		返回某列的类别形式
+df[..].cat.categories			类别的对应值，可直接修改
+df[..].cat.set_categories(seq)		修改类别
+------------------------------------------------------------------------
+文件读写
+
+df.to_csv(filename)			写入csv
+pd.read_csv(filename)			读取csv
+df.to_hdf(filename)			写入h5
+pd.read_hdf(filename)			读取h5
+df.to_excel(filename,sheet_name)	写入xlsx
+pd.read_excel(filename,'Sheet1')	读取xlsx
+
+
+
+

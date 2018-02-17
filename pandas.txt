@@ -17,7 +17,7 @@ df['e']=s				像字典一样可直接指定值为Series s，没有的index项设
 构造对象
 
 Series(data,index=index)		生成一维的Series，类型是统一的dtype，data可以是①字典、②数组、③标量，index是一维坐标轴的索引列表
-					Serues可以类似字典和数组一样进行操作
+					Series可以类似字典和数组一样进行操作
 date_range(str,periods=n)		构造时间序列DatetimeIndex，str为第一天的时间
 DataFrame(data,index,columns)		创建DataFrame结构，data为二维数组(行列)或字典(键为列名，值为一列所有值)或DataFrame
 ------------------------------------------------------------------------
@@ -35,29 +35,29 @@ values					查看数据值，返回数组
 ------------------------------------------------------------------------
 DataFrame 函数
 
-head(n=5)				查看最前面n行数据
-tail(n=5)				查看最后面n行数据
-describe()				查看简单的统计数据
-transpose() | T				转置
-sort_index(axis=0,ascending=T)		按下标小到大排序，axis=1指列标，ascending为F指倒序
-sort_values(by,ascending=T)		按照by列排序，ascending为F指倒序
-copy()					复制一份DataFrame
-isin(list)				返回对应元素是否存在list中的一个DataFrame
-reindex(index,columns)			返回对应新结构的DataFrame
-dropna(how='any')			丢弃所有缺失数据的行得到的新数据
-fillna(value=n)				填充缺失数据
-isnull()				检查缺失数据的位置
-mean(axis=0)				列均值，1为行均值
-sub(s)					返回元素减s的新DataFrame
-apply(f,axis=0)				将f作用于每一列，0为作用于行
-stack()					将columns变成一个新的index部分
-unstack()				将最后一级index放回column，也可以指定其他级别n
+df.head(n=5)				查看最前面n行数据
+df.tail(n=5)				查看最后面n行数据
+df.describe()				查看简单的统计数据
+df.transpose() | df.T			转置
+df.sort_index(axis=0,ascending=T)	按下标小到大排序，axis=1指列标，ascending为F指倒序
+df.sort_values(by,ascending=T)		按照by列排序，ascending为F指倒序
+df.copy()				复制一份DataFrame
+df.isin(list)				返回对应元素是否存在list中的一个DataFrame
+df.reindex(index,columns)		返回对应新结构的DataFrame
+df.dropna(how='any')			丢弃所有缺失数据的行得到的新数据
+df.fillna(value=n)			填充缺失数据
+df.isnull()				检查缺失数据的位置
+df.mean(axis=0)				列均值，1为行均值
+df.sub(s)				返回元素减s的新DataFrame
+df.apply(f,axis=0)			将f作用于每一列，0为作用于行
+df.stack()				将columns变成一个新的index部分
+df.unstack()				将最后一级index放回column，也可以指定其他级别n
+df.append(s)				返回添加了行的新DataFrame
+df.groupby(by)				返回根据by分组的DataFrameGroupBy对象，可操作sum()等函数，by可以是序列
 ------------------------------------------------------------------------
 pandas 函数
 
 concat([pd1,pd2])			将多个pandas对象进行连接
-append(s)				返回添加了行的新DataFrame
-df.groupby(by)				返回根据by分组的DataFrameGroupBy对象，可操作sum()等函数，by可以是序列
 MultiIndex.from_tuples(tuples,names=)	创建多index的index，tuples为 每一行index构成元组 组成的序列
 ------------------------------------------------------------------------
 类别

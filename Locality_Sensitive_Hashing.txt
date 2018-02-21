@@ -1,0 +1,17 @@
+﻿MinHash
+
+m=MinHash()							MinHash初始化状态
+m.update(data[..].encode(..))					内容哈希化
+m1.jaccard(m2)							Estimated Jaccard，用函数方式求距离
+float(len(s1.intersection(s2)))/float(len(s1.union(s2)))	Actual Jaccard，用集合的方式求距离(s=set(data))
+
+
+
+
+
+
+
+
+
+
+

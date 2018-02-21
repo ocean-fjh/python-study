@@ -54,6 +54,7 @@ df.stack()				将columns变成一个新的index部分
 df.unstack()				将最后一级index放回column，也可以指定其他级别n
 df.append(s)				返回添加了行的新DataFrame
 df.groupby(by)				返回根据by分组的DataFrameGroupBy对象，可操作sum()等函数，by可以是序列
+df.drop_duplicates()			返回去除重复行的DataFrame，可指定列和是否改变df
 ------------------------------------------------------------------------
 pandas 函数
 
